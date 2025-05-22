@@ -31,13 +31,36 @@ public class Ticket {
     }
 
     public double calcularPrecio() {
+        if (horaSalida == null) {
+            throw new IllegalStateException("La salida no ha sido marcada aún");
+        }
+
+        long minutos = calcularMinutos();
+        long horasCobradas = (long) Math.ceil(minutos / 60.0);
+
+        double tarifaPorHora;
+        switch (vehiculo.getTipo()) {
+            case AUTO:
+                tarifaPorHora = 100;
+                break;
+            case SUV:
+                tarifaPorHora = 130;
+                break;
+            case PICKUP:
+                tarifaPorHora = 180;
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo de vehículo desconocido");
+        }
+
+        return horasCobradas * tarifaPorHora;
         // TODO implementar el metodo para calcular el importe a abonar segun el tipo de vehiculo
         // AUTO -> 100, SUV -> 130, PICKUP -> 180
         // el importe es por hora redondeando el tiempo hacia arriba,
         // por ejemplo si estuvo 45 minutos se le tarifa por 60, si estuvo 80 minutos se le tarifa por 120 minutos, etc...
         // retornar el importe final
 
-        return 0;
+       // return 0;
     }
 
 }
