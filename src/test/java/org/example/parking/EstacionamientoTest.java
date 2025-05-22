@@ -13,6 +13,7 @@ public class EstacionamientoTest {
     private Cliente cliente;
 
 
+
     @Before
     public void setup(){
         estacionamiento=new Estacionamiento();
@@ -23,9 +24,8 @@ public class EstacionamientoTest {
 
     @Test
     public void testRetirarVehiculo() throws Exception {
-        //DONE test
 
-        Ticket ticket=estacionamiento.retirarVehiculo("AAA");
+        Ticket ticket=estacionamiento.retirarVehiculo("Ad546");
 
         assertEquals(ticket.getVehiculo().getPatente(),vehiculo.getPatente());
     }
@@ -34,6 +34,7 @@ public class EstacionamientoTest {
 
     @Test
     public void testCalcularPrecio() throws Exception {
+
         // TODO test
     }
 
