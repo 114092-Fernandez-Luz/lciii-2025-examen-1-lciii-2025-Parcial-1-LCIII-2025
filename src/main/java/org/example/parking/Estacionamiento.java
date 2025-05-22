@@ -44,8 +44,8 @@ public class Estacionamiento {
         if (ticket != null) {
             ticket.marcarSalida();
 
-            vehiculosEstacionados.remove(patente);
-            return  ticket;
+          return   vehiculosEstacionados.remove(patente);
+
         }
         throw new Exception("Vehiculo no encontrado");
 
