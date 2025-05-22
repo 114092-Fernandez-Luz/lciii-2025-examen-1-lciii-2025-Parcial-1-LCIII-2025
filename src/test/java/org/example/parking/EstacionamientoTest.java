@@ -17,8 +17,8 @@ public class EstacionamientoTest {
     @Before
     public void setup(){
         estacionamiento=new Estacionamiento();
-        vehiculo=new Vehiculo("Ad546","Gold trend", Vehiculo.Tipo.AUTO);
-        cliente=new Cliente("354789","Maria Paz");
+        vehiculo=new Vehiculo("Ad546","Tollota Corolla", Vehiculo.Tipo.AUTO);
+        cliente=new Cliente("3544789","Maria Paz");
         estacionamiento.ingresarVehiculo(cliente.getDni(),cliente.getNombre(),vehiculo);
     }
 
@@ -34,6 +34,7 @@ public class EstacionamientoTest {
 
     @Test
     public void testCalcularPrecio() throws Exception {
+        // no llegue a hacer este test
 
         // TODO test
     }
